@@ -36,6 +36,7 @@ export class Cv2AmbulanceWlApp {
     toRelative(location.pathname)
   }
   render() {
+   
     let element = "list"
     let entryId = "@new"
 
@@ -48,6 +49,7 @@ export class Cv2AmbulanceWlApp {
       const absolute = new URL(path, new URL(this.basePath, document.baseURI)).pathname;
       window.navigation.navigate(absolute)
     }
+    console.debug("cv2-ambulance-wl-app.render() - path: %s", this.relativePath);
 
     return (
       <Host>
