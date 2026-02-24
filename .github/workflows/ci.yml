@@ -61,6 +61,7 @@ jobs:
           type=semver,pattern={{major}}
           type=raw,value=latest,enable={{is_default_branch}} # `latest` pre každý komit do main vetvy
 
+
     - uses: docker/build-push-action@v2
       with:
         context: .
