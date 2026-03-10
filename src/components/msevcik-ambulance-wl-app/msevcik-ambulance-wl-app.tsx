@@ -12,6 +12,8 @@ declare global {
 export class MsevcikAmbulanceWlApp {
   @State() private relativePath = "";
 
+  @Prop() apiBase: string;
+  @Prop() ambulanceId: string;
   @Prop() basePath: string = "";
 
   componentWillLoad() {
@@ -55,6 +57,7 @@ export class MsevcikAmbulanceWlApp {
             oneditor-closed={() => navigate("./list")} >
           </msevcik-ambulance-wl-editor>
           : <msevcik-ambulance-wl-list
+            ambulance-id={this.ambulanceId} api-base={this.apiBase}
             onentry-clicked={(ev: CustomEvent<string>) => navigate("./entry/" + ev.detail)} >
           </msevcik-ambulance-wl-list>
         }

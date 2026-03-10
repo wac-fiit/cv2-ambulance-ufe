@@ -7,6 +7,8 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MsevcikAmbulanceWlApp {
+        "ambulanceId": string;
+        "apiBase": string;
         /**
           * @default ""
          */
@@ -16,6 +18,8 @@ export namespace Components {
         "entryId": string;
     }
     interface MsevcikAmbulanceWlList {
+        "ambulanceId": string;
+        "apiBase": string;
     }
 }
 export interface MsevcikAmbulanceWlEditorCustomEvent<T> extends CustomEvent<T> {
@@ -75,6 +79,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MsevcikAmbulanceWlApp {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         /**
           * @default ""
          */
@@ -85,20 +91,28 @@ declare namespace LocalJSX {
         "onEditor-closed"?: (event: MsevcikAmbulanceWlEditorCustomEvent<string>) => void;
     }
     interface MsevcikAmbulanceWlList {
+        "ambulanceId"?: string;
+        "apiBase"?: string;
         "onEntry-clicked"?: (event: MsevcikAmbulanceWlListCustomEvent<string>) => void;
     }
 
     interface MsevcikAmbulanceWlAppAttributes {
+        "apiBase": string;
+        "ambulanceId": string;
         "basePath": string;
     }
     interface MsevcikAmbulanceWlEditorAttributes {
         "entryId": string;
     }
+    interface MsevcikAmbulanceWlListAttributes {
+        "apiBase": string;
+        "ambulanceId": string;
+    }
 
     interface IntrinsicElements {
         "msevcik-ambulance-wl-app": Omit<MsevcikAmbulanceWlApp, keyof MsevcikAmbulanceWlAppAttributes> & { [K in keyof MsevcikAmbulanceWlApp & keyof MsevcikAmbulanceWlAppAttributes]?: MsevcikAmbulanceWlApp[K] } & { [K in keyof MsevcikAmbulanceWlApp & keyof MsevcikAmbulanceWlAppAttributes as `attr:${K}`]?: MsevcikAmbulanceWlAppAttributes[K] } & { [K in keyof MsevcikAmbulanceWlApp & keyof MsevcikAmbulanceWlAppAttributes as `prop:${K}`]?: MsevcikAmbulanceWlApp[K] };
         "msevcik-ambulance-wl-editor": Omit<MsevcikAmbulanceWlEditor, keyof MsevcikAmbulanceWlEditorAttributes> & { [K in keyof MsevcikAmbulanceWlEditor & keyof MsevcikAmbulanceWlEditorAttributes]?: MsevcikAmbulanceWlEditor[K] } & { [K in keyof MsevcikAmbulanceWlEditor & keyof MsevcikAmbulanceWlEditorAttributes as `attr:${K}`]?: MsevcikAmbulanceWlEditorAttributes[K] } & { [K in keyof MsevcikAmbulanceWlEditor & keyof MsevcikAmbulanceWlEditorAttributes as `prop:${K}`]?: MsevcikAmbulanceWlEditor[K] };
-        "msevcik-ambulance-wl-list": MsevcikAmbulanceWlList;
+        "msevcik-ambulance-wl-list": Omit<MsevcikAmbulanceWlList, keyof MsevcikAmbulanceWlListAttributes> & { [K in keyof MsevcikAmbulanceWlList & keyof MsevcikAmbulanceWlListAttributes]?: MsevcikAmbulanceWlList[K] } & { [K in keyof MsevcikAmbulanceWlList & keyof MsevcikAmbulanceWlListAttributes as `attr:${K}`]?: MsevcikAmbulanceWlListAttributes[K] } & { [K in keyof MsevcikAmbulanceWlList & keyof MsevcikAmbulanceWlListAttributes as `prop:${K}`]?: MsevcikAmbulanceWlList[K] };
     }
 }
 export { LocalJSX as JSX };
